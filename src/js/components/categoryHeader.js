@@ -6,7 +6,7 @@ const CategoryHeader = ({ category }) => {
 
   return (
     <div className="categoryheader">
-      <h2>{category}</h2>
+      <h2 className="categoryheader__text">{category}</h2>
     </div>
   );
 };

@@ -4,10 +4,23 @@ import { shallow } from 'enzyme';
 import CategoryHeader from '../src/js/components/categoryHeader';
 
 describe('Render <CategoryHeader> component', () => {
-  test('render correct the category header', () => {
-    const category = 'hello world';
-    const CategoryHeaderWrapper = shallow(<CategoryHeader category={category} />);
-    console.log(CategoryHeaderWrapper.find(<h2></h2>));
-    expect(CategoryHeaderWrapper.find(<h2 />).text()).toEqual(category);
+
+  let CategoryHeaderWrapper;
+
+  beforeAll(() => {
+    CategoryHeaderWrapper = shallow(<CategoryHeader category='hello world'/>);
   });
+
+  test('render the category header div', () => {
+    expect(CategoryHeaderWrapper.find('.categoryheader')).toHaveLength(1);
+  });
+
+  test('render the category header h2', () => {
+    expect(CategoryHeaderWrapper.find('.categoryheader__text')).toHaveLength(1);
+  });
+
+  test('render correct category header text of "hello world"', () => {
+    expect(CategoryHeaderWrapper.find('.categoryheader__text').text()).toEqual('hello world');
+  });
+
 });
