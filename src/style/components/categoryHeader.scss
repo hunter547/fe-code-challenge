@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.categoryheader {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  h2 {
+    padding: 1rem 1rem 1rem 0;
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 500;
+  }
+}

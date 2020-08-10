@@ -1,0 +1,62 @@
+@import'../variables.scss';
+
+.flowergrid::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+.flowergrid > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+.flowergrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-auto-rows: 1fr;
+  row-gap: 8.2rem;
+  column-gap: 8rem;
+  width: 100%;
+  .flowergrid__item {
+    font-size: 1.2rem;
+    position: relative;
+    .flowergrid__item-image {
+      height: 100%;
+      width: 100%;
+    }
+    .flowergrid__item-badge {
+      position: absolute;
+      width: 4.5rem;
+      height: 4.5rem;
+      right: 0.625rem;
+      top: 0.625rem;
+      transform: rotateZ(30deg);
+    }
+    .flowergrid__item-content {
+      padding: 0.5rem;
+      border: 1px solid $black;
+      display: flex;
+      justify-content: space-between;
+      .flowergrid__item-prices {
+        display: flex;
+        .flowergrid__item-regular {
+          color: $red;
+          text-decoration: line-through;
+          margin-left: 1rem;
+        }
+        .flowergrid__item-sale {
+          color: $green;
+        }
+      }
+    }
+  }
+  .flowergrid__item:hover {
+    cursor: pointer;
+  }
+}
+@media (min-width: $phone) {
+  .flowergrid {
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  }
+}

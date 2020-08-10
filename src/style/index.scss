@@ -1,3 +1,25 @@
+@import './variables.scss';
+
+html {
+    position: relative;
+    font-family: $font;
+}
+
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    background-color: $background;
+    margin: 0;
+}
+
+#app {
+    margin: 0 auto;
+    max-width: 100rem;
+    padding: 1.0875rem 1.45rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+input[type=number]::-webkit-outer-spin-button {
+    margin-bottom: 0.2rem;
 }

@@ -1,0 +1,88 @@
+@import '../variables.scss';
+
+.order {
+  .order__header {
+    margin-bottom: 5rem;
+    .order__header-underline {
+      width: 100%;
+      border: 1px solid $grey;
+    }
+  }
+  .order__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .order__grid {
+      display: grid;
+      width: 60%;
+      .order__grid-item {
+        border-bottom: 1px solid $black;
+        padding: 1rem 0rem;
+        &:first-child {
+          border-top: 1px solid $black;
+        }
+        .order__grid-item-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .order__grid-item-left {
+            display: flex;
+            align-items: center;
+            .order__grid-item-visual {
+              .order__grid-item-image {
+                width: 5rem;
+                margin-right: 1rem;
+              }
+            }
+          }
+          .order__grid-item-price {
+            span {
+              position: relative;
+              &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                position: absolute;
+                width: 55%;
+              }
+            }
+            .order__grid-item-input {
+              font-family: $font;
+              padding: 0.2rem;
+              outline: none;
+            }
+            .order__grid-item-remove {
+              font-family: $font;
+              background: none;
+              border: none;
+              color: $dark-blue;
+              font-weight: 500;
+              outline: none;
+              padding: 0;
+              margin-left: 0.5rem;
+              cursor: pointer;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .order__summary {
+      width: 33%;
+      .order__summary-content {
+        border-top: 1px solid $black;
+        border-bottom: 1px solid $black;
+        .order__summary-subtotal, .order__summary-shipping,
+        .order__summary-total {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

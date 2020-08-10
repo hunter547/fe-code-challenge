@@ -1,0 +1,42 @@
+@import '../variables.scss';
+
+.filter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 2rem;
+  border-top: 2px solid $grey;
+  border-bottom: 2px solid $grey;
+  .filter__header {
+    margin-right: 2rem;
+  }
+  .filter__category {
+    position: relative;
+    .filter__button {
+      font-family: $font;
+      font-size: $font-size;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    .filter__list {
+      z-index: 1;
+      margin-top:0;
+      background-color: $background;
+      position: absolute;
+      list-style: none;
+      padding: 0;
+      width: 15rem;
+      border: 1px solid $black;
+      transition: 0.3s;
+      .filter__list-item {
+        padding: 0.8rem;
+        padding-left: -4rem;
+      }
+      .filter__list-item:hover {
+        background-color: $light-blue;
+        cursor: pointer;
+      }
+    }
+  }
+}

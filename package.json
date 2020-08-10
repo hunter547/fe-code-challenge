@@ -3,9 +3,15 @@
   "version": "0.0.1",
   "description": "starter project for front-end code challenge",
   "main": "index.jsx",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(scss)$": "identity-obj-proxy"
+    },
+    "setupFilesAfterEnv": ["./test/setupTests.js"]
+  },
   "scripts": {
     "watch": "./node_modules/.bin/webpack -d --watch",
-    "dev": "./node_modules/.bin/webpack-dev-server -d --hot --inline --progress --colors",
+    "dev": "./node_modules/.bin/webpack-dev-server -d --hot --inline --progress --colors --history-api-fallback",
     "api": "json-server --watch api/db.js --port 8081 --routes api/routes.json",
     "dev:api": "npm run api & npm run dev",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack -p",
@@ -22,8 +28,17 @@
   "dependencies": {
     "@babel/plugin-proposal-throw-expressions": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
+    "identity-obj-proxy": "^3.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
