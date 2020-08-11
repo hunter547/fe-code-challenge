@@ -12,9 +12,16 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @media(max-width: 53.125rem) {
+      flex-direction: column;
+    }
     .order__grid {
       display: grid;
       width: 60%;
+      @media(max-width: 53.125rem) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
       .order__grid-item {
         border-bottom: 1px solid $black;
         padding: 1rem 0rem;
@@ -73,6 +80,9 @@
     }
     .order__summary {
       width: 33%;
+      @media(max-width: 53.125rem) {
+        width: 100%;
+      }
       .order__summary-content {
         border-top: 1px solid $black;
         border-bottom: 1px solid $black;
