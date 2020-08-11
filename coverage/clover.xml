@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1597102903665" clover="3.2.0">
-  <project timestamp="1597102903665" name="All files">
-    <metrics statements="74" coveredstatements="54" conditionals="20" coveredconditionals="6" methods="28" coveredmethods="18" elements="122" coveredelements="78" complexity="0" loc="74" ncloc="74" packages="5" files="10" classes="10"/>
+<coverage generated="1597106823480" clover="3.2.0">
+  <project timestamp="1597106823480" name="All files">
+    <metrics statements="75" coveredstatements="55" conditionals="22" coveredconditionals="6" methods="28" coveredmethods="18" elements="125" coveredelements="79" complexity="0" loc="75" ncloc="75" packages="5" files="10" classes="10"/>
     <package name="api">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="apiConstants.js" path="/Users/hunterevanoff/projects/fe-code-challenge/api/apiConstants.js">
@@ -33,7 +33,7 @@
       </file>
     </package>
     <package name="src.js.components">
-      <metrics statements="30" coveredstatements="27" conditionals="8" coveredconditionals="3" methods="13" coveredmethods="11"/>
+      <metrics statements="31" coveredstatements="28" conditionals="10" coveredconditionals="3" methods="13" coveredmethods="11"/>
       <file name="categoryHeader.js" path="/Users/hunterevanoff/projects/fe-code-challenge/src/js/components/categoryHeader.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
@@ -41,27 +41,28 @@
         <line num="16" count="1" type="stmt"/>
       </file>
       <file name="filter.js" path="/Users/hunterevanoff/projects/fe-code-challenge/src/js/components/filter.js">
-        <metrics statements="20" coveredstatements="17" conditionals="6" coveredconditionals="2" methods="9" coveredmethods="8"/>
+        <metrics statements="21" coveredstatements="18" conditionals="8" coveredconditionals="2" methods="9" coveredmethods="8"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="8" count="12" type="stmt"/>
-        <line num="9" count="12" type="stmt"/>
-        <line num="11" count="12" type="stmt"/>
-        <line num="12" count="5" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="9" count="14" type="stmt"/>
+        <line num="10" count="14" type="stmt"/>
+        <line num="12" count="14" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="16" count="14" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
-        <line num="20" count="12" type="stmt"/>
-        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="21" count="14" type="stmt"/>
         <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="28" count="12" type="stmt"/>
-        <line num="29" count="10" type="stmt"/>
-        <line num="30" count="10" type="stmt"/>
-        <line num="33" count="12" type="stmt"/>
-        <line num="37" count="5" type="stmt"/>
-        <line num="40" count="85" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="29" count="14" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="34" count="14" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="41" count="102" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
       </file>
       <file name="header.js" path="/Users/hunterevanoff/projects/fe-code-challenge/src/js/components/header.js">
         <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>

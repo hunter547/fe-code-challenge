@@ -7,6 +7,7 @@ const Filter = ({ setCategory }) => {
   
   const [toggleCategory, setToggleCategory] = useState(false);
   const filterRef = useRef();
+  const buttonRef = useRef();
 
   const flipCategory = () => {
     setToggleCategory(!toggleCategory);
@@ -19,22 +20,26 @@ const Filter = ({ setCategory }) => {
 
   const handleClickOutside = e => {
     if (filterRef.current) {
-      if (!filterRef.current.contains(e.target)) {
+      if (!filterRef.current.contains(e.target) && !buttonRef.current.contains(e.target)) {
         setToggleCategory(false);
       }
     }
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mouseup', handleClickOutside);
+    return () => document.removeEventListener('mouseup', handleClickOutside);
   });
 
   return (
     <div className="filter">
       <div className="filter__header">FILTER</div>
       <div className="filter__category">
-        <button className="filter__button" onClick={() => flipCategory()}>Category &#8595;</button>
+        {toggleCategory ? 
+          <button className="filter__button" ref={buttonRef} onClick={() => flipCategory()}>Category &#8593;</button>
+          :
+          <button className="filter__button" ref={buttonRef} onClick={() => flipCategory()}>Category &#8595;</button>
+        }
         {toggleCategory ? <ul className="filter__list" ref={filterRef}>
           {CATEGORY_NAMES.map((category, index) => {
             return (

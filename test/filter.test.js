@@ -80,4 +80,11 @@ describe('Render <Filter> mounted testing', () => {
     FilterWrapper.find('.filter__list-item').at(0).simulate('click');
     expect(FilterWrapper.find('.filter__list')).toHaveLength(0);
   });
+
+  test('ensure clicking anywhere other than the list will cause an open list to collapse', () => {
+    FilterWrapper.find('.filter__button').simulate('click');
+    expect(FilterWrapper.find('.filter__list')).toHaveLength(1);
+    FilterWrapper.find('.filter__header').simulate('click');
+    expect(FilterWrapper.find('.filter__list')).toHaveLength(1);
+  });
 });
