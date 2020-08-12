@@ -33,6 +33,7 @@ const FlowersGrid = ({ category }) => {
 
   useEffect(() => {
     const env = window.location.href;
+    const parameters = category ? `categories?slug=${category.replace(' ','-').toLowerCase()}` : null;
     let url;
     if (env.search(/localhost/i) > 0) {
       url = `http://localhost:8081/${category ? parameters : 'categories'}`;
@@ -41,7 +42,6 @@ const FlowersGrid = ({ category }) => {
       url = `https://bouqs-database.herokuapp.com/${category ? parameters : 'categories'}`;
     }
     const Http = new XMLHttpRequest();
-    const parameters = category ? `categories?slug=${category.replace(' ','-').toLowerCase()}` : null;
     Http.open('GET', url);
     Http.send();
     Http.onreadystatechange =() => {
