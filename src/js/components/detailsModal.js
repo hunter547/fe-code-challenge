@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 import '../../style/components/detailsModal.scss';
 import * as storage from '../utilities/storage';
+import ReactTooltip from 'react-tooltip';
 
 Modal.setAppElement('body');
  
@@ -14,7 +15,14 @@ const DetailsModal = (props) => {
   const name = product.name;
   const url = product.images[0].url;
 
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [timeOut, setTimeOut] = useState(null);
+  const [timeOutStart, setTimeOutStart] = useState(null);
+  const [addToCartPushed, setAddToCartPushed] = useState(0);
+
   const updateCart = () => {
+    setShowTooltip(true);
+    setAddToCartPushed(addToCartPushed + 1);
     const currentCart = storage.getItems() ? storage.getItems() : [];
     const price = product.sale === 0 ? product.regular : product.sale;
     const originalArray = JSON.parse(JSON.stringify(currentCart));
@@ -36,14 +44,34 @@ const DetailsModal = (props) => {
     }
   };
 
+  useEffect(() => {
+    if (showTooltip) {
+      const timeDifference = new Date() - timeOutStart;
+      if (timeDifference < 2000) {
+        clearTimeout(timeOut);
+        setTimeOut(null);
+        setTimeOutStart(null);
+      }
+      ReactTooltip.show();
+      setTimeOut(setTimeout(()=> setShowTooltip(false), 2000));
+      setTimeOutStart(new Date());
+    }
+    else {
+      setTimeOut(null);
+      setTimeOutStart(null);
+      ReactTooltip.hide();
+    }
+  }, [addToCartPushed, showTooltip]);
+
   return (
     <Modal
       isOpen={modalIsOpen}
-      onRequestClose={flipModal}
+      onRequestClose={() => flipModal(timeOut)}
       className="details-modal"
       contentLabel="Example Modal"
     >
       <div className="details-modal__container">
+        <div className="details-modal__exit" onClick={() => flipModal(timeOut)}></div>
         <div className="details-modal__visual">
           <img className="details-modal__image" src={url}></img>  
         </div>
@@ -53,14 +81,17 @@ const DetailsModal = (props) => {
             <div className="details-modal__description"><h3>{descr}</h3></div>
             <div className="details-modal__manufacturer"><h3><span style={{fontWeight:'500'}}>Made by:</span>{` ${manufacturer.name} in ${manufacturer.location}`}</h3></div>
           </div>
-          <div className="details-modal__input">
-            <div className="details-modal__cart">
-              <button className="details-modal__cart-button" onClick={() => updateCart()}>Add to cart</button>
-            </div>
-            <div className="details-modal__checkout">
-              <Link to="/order">
-                <button className="details-modal__cart-button">Checkout</button>
-              </Link>
+          <div className="details-modal__input-wrapper">
+            <div className="details-modal__input">
+              <div className="details-modal__cart">
+                <button data-tip data-for="cart-tip" className="details-modal__cart-button" onMouseUp={() => updateCart()}>Add to cart</button>
+                <ReactTooltip event="mouseup" eventOff="mousedown" id="cart-tip" isCapture place="top" type="dark" effect="solid">Success, added to cart!</ReactTooltip>
+              </div>
+              <div className="details-modal__checkout">
+                <Link to="/order">
+                  <button className="details-modal__cart-button">Checkout</button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

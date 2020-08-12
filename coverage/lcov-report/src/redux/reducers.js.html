@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.18% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -124,47 +124,47 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,46 +185,46 @@ const initialState = { cartItems: [] };
 &nbsp;
 function cartItems(state = initialState, action) {
   switch (action.type) {
-<span class="branch-0 cbranch-no" title="branch not covered" >  case ADD_CART_ITEM:</span>
-<span class="cstat-no" title="statement not covered" >    return Object.assign({}, state, {</span>
+  case ADD_CART_ITEM:
+    return Object.assign({}, state, {
       cartItems: [
         ...state.cartItems,
         action.value
       ]
     });
-<span class="branch-1 cbranch-no" title="branch not covered" >  case REMOVE_CART_ITEM:</span>
-<span class="cstat-no" title="statement not covered" >    return Object.assign({}, state, {</span>
+  case REMOVE_CART_ITEM:
+    return Object.assign({}, state, {
       cartItems: [
-        ...state.cartItems.filter(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.id !== action.id)</span>
+        ...state.cartItems.filter(item =&gt; item.id !== action.id)
       ]
     });
-<span class="branch-2 cbranch-no" title="branch not covered" >  case SET_CART:</span>
-<span class="cstat-no" title="statement not covered" >    return Object.assign({}, state, {</span>
+  case SET_CART:
+    return Object.assign({}, state, {
       cartItems: action.value
     });
-<span class="branch-3 cbranch-no" title="branch not covered" >  case ADD_ITEM_QUANTITY:</span>
-<span class="cstat-no" title="statement not covered" >    return Object.assign({}, state, {</span>
+  case ADD_ITEM_QUANTITY:
+    return Object.assign({}, state, {
       cartItems: [
-        ...state.cartItems.map(<span class="fstat-no" title="function not covered" >it</span>em =&gt; {
-<span class="cstat-no" title="statement not covered" >          if (item.id === action.id) {</span>
-<span class="cstat-no" title="statement not covered" >            return Object.assign({}, item, {</span>
+        ...state.cartItems.map(item =&gt; {
+          if (item.id === action.id) {
+            return Object.assign({}, item, {
               quantity: item.quantity + action.quantity
             });
           }
-<span class="cstat-no" title="statement not covered" >          return item;</span>
+          return item;
         })
       ]
     });
-<span class="branch-4 cbranch-no" title="branch not covered" >  case SUBTRACT_ITEM_QUANTITY:</span>
-<span class="cstat-no" title="statement not covered" >    return Object.assign({}, state, {</span>
+  case SUBTRACT_ITEM_QUANTITY:
+    return Object.assign({}, state, {
       cartItems: [
-        ...state.cartItems.map(<span class="fstat-no" title="function not covered" >it</span>em =&gt; {
-<span class="cstat-no" title="statement not covered" >          if (item.id === action.id) {</span>
-<span class="cstat-no" title="statement not covered" >            return Object.assign({}, item, {</span>
+        ...state.cartItems.map(item =&gt; {
+          if (item.id === action.id) {
+            return Object.assign({}, item, {
               quantity: item.quantity - action.quantity
             });
           }
-<span class="cstat-no" title="statement not covered" >          return item;</span>
+          return item;
         })
       ]
     });  
@@ -244,7 +244,7 @@ export default flowersApp;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 10 2020 20:47:03 GMT-0400 (Eastern Daylight Time)
+                at Tue Aug 11 2020 11:56:59 GMT-0400 (Eastern Daylight Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

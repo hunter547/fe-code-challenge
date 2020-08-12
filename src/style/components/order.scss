@@ -5,7 +5,7 @@
     margin-bottom: 5rem;
     .order__header-underline {
       width: 100%;
-      border: 1px solid $grey;
+      border: 0.0625rem solid $grey;
     }
   }
   .order__content {
@@ -23,14 +23,13 @@
         margin-bottom: 2rem;
       }
       .order__grid-item {
-        border-bottom: 1px solid $black;
+        border-bottom: 0.0625rem solid $black;
         padding: 1rem 0rem;
         &:first-child {
-          border-top: 1px solid $black;
+          border-top: 0.0625rem solid $black;
         }
         .order__grid-item-content {
           display: flex;
-          align-items: center;
           justify-content: space-between;
           .order__grid-item-left {
             display: flex;
@@ -55,23 +54,34 @@
                 width: 55%;
               }
             }
-            .order__grid-item-input {
-              font-family: $font;
-              padding: 0.2rem;
-              outline: none;
-            }
-            .order__grid-item-remove {
-              font-family: $font;
-              background: none;
-              border: none;
-              color: $dark-blue;
-              font-weight: 500;
-              outline: none;
-              padding: 0;
-              margin-left: 0.5rem;
-              cursor: pointer;
-              &:hover {
-                text-decoration: underline;
+            .order__grid-item-form {
+              display: flex;
+              @media(max-width: 37.5rem) {
+                flex-direction: column;
+                align-items: flex-start;
+              }
+              .order__grid-item-input {
+                font-family: $font;
+                padding: 0.35rem;
+                outline: none;
+                margin-right: 0.5rem;
+              }
+              .order__grid-item-remove {
+                font-family: $font;
+                background: none;
+                border: none;
+                color: $dark-blue;
+                font-weight: 500;
+                outline: none;
+                padding: 0;
+                margin-left: 0.5rem;
+                cursor: pointer;
+                &:hover {
+                  text-decoration: underline;
+                }
+                @media(max-width: 37.5rem) {
+                  margin: 1rem 0 0 0;
+                }
               }
             }
           }
@@ -84,8 +94,8 @@
         width: 100%;
       }
       .order__summary-content {
-        border-top: 1px solid $black;
-        border-bottom: 1px solid $black;
+        border-top: 0.0625rem solid $black;
+        border-bottom: 0.0625rem solid $black;
         .order__summary-subtotal, .order__summary-shipping,
         .order__summary-total {
           display: flex;

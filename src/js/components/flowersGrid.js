@@ -12,8 +12,11 @@ const FlowersGrid = ({ category }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [product, setProduct] = useState(null);
 
-  const flipModal = () => {
+  const flipModal = (timerID) => {
     setModalIsOpen(!modalIsOpen);
+    if (timerID) {
+      clearTimeout(timerID);
+    }
   };
 
   const newModalData = (product) => {
@@ -92,7 +95,7 @@ const FlowersGrid = ({ category }) => {
             </div>
           );
         })}
-        {modalIsOpen ? <DetailsModal modalIsOpen={modalIsOpen} flipModal={() => flipModal()} product={product} /> : null}
+        {modalIsOpen ? <DetailsModal modalIsOpen={modalIsOpen} flipModal={(timeOut) => flipModal(timeOut)} product={product} /> : null}
       </div>
     </div>
     

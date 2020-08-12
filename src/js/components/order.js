@@ -49,7 +49,7 @@ const Order = ({ cartItems }) => {
                   </div>
                   <div className="order__grid-item-price">
                     <h2>${item.price * item.quantity}</h2>
-                    <form onSubmit={(e) => {
+                    <form className="order__grid-item-form" onSubmit={(e) => {
                       removeItems(e, item.id, item.quantity);
                     }} >
                       <span>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -88,47 +88,47 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const ADD_CART_ITEM = 'ADD_CART_ITEM';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 export const SET_CART = 'SET_CART';
 export const ADD_ITEM_QUANTITY = 'ADD_ITEM_QUANTITY';
 export const SUBTRACT_ITEM_QUANTITY = 'SUBTRACT_ITEM_QUANTITY';
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >addCartItem(</span>value) {
-<span class="cstat-no" title="statement not covered" >  return {type: ADD_CART_ITEM, value};</span>
+export function addCartItem(value) {
+  return {type: ADD_CART_ITEM, value};
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >removeCartItem(</span>id) {
-<span class="cstat-no" title="statement not covered" >  return {type: REMOVE_CART_ITEM, id};</span>
+export function removeCartItem(id) {
+  return {type: REMOVE_CART_ITEM, id};
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >setCart(</span>value) {
-<span class="cstat-no" title="statement not covered" >  return {type: SET_CART, value};</span>
+export function setCart(value) {
+  return {type: SET_CART, value};
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >addItemQuantity(</span>id, quantity) {
-<span class="cstat-no" title="statement not covered" >  return {type: ADD_ITEM_QUANTITY, id, quantity};</span>
+export function addItemQuantity(id, quantity) {
+  return {type: ADD_ITEM_QUANTITY, id, quantity};
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >subtractItemQuantity(</span>id, quantity) {
-<span class="cstat-no" title="statement not covered" >  return {type: SUBTRACT_ITEM_QUANTITY, id, quantity};</span>
+export function subtractItemQuantity(id, quantity) {
+  return {type: SUBTRACT_ITEM_QUANTITY, id, quantity};
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -136,7 +136,7 @@ export function <span class="fstat-no" title="function not covered" >subtractIte
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 10 2020 20:47:03 GMT-0400 (Eastern Daylight Time)
+                at Tue Aug 11 2020 11:56:59 GMT-0400 (Eastern Daylight Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

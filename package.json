@@ -7,7 +7,9 @@
     "moduleNameMapper": {
       "\\.(scss)$": "identity-obj-proxy"
     },
-    "setupFilesAfterEnv": ["./test/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "./test/setupTests.js"
+    ]
   },
   "scripts": {
     "watch": "./node_modules/.bin/webpack -d --watch",
@@ -28,7 +30,6 @@
   "dependencies": {
     "@babel/plugin-proposal-throw-expressions": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
-    "@testing-library/jest-dom": "^5.11.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "identity-obj-proxy": "^3.0.0",
@@ -38,6 +39,7 @@
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
+    "react-tooltip": "^4.2.8",
     "redux": "^4.0.5"
   },
   "devDependencies": {

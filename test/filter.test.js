@@ -1,14 +1,31 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 
 import Filter from '../src/js/components/filter';
 import { CATEGORY_NAMES } from '../api/apiConstants';
+
+// Source and explaination: https://webman.pro/blog/how-to-detect-and-test-click-outside-in-react/#testing-enzyme-vs-react-testing-library
+export const createDocumentListenersMock = () => {
+  const listeners = {};
+  const handler = (domEl, event) => listeners?.[event]?.({ target: domEl });
+  document.addEventListener = jest.fn((event, cb) => {
+    listeners[event] = cb;
+  });
+  document.removeEventListener = jest.fn(event => {
+    delete listeners[event];
+  });
+  return {
+    mouseUp: domEl => handler(domEl, 'mouseup'),
+    click: domEl => handler(domEl, 'click'),
+  };
+};
 
 describe('Render <Filter> shallow testing', () => {
 
   let FilterWrapper;
 
-  beforeAll(() => {
+  beforeEach(() => {
     FilterWrapper = shallow(<Filter setCategory={jest.fn()}/>);
   });
 
@@ -42,12 +59,25 @@ describe('Render <Filter> shallow testing', () => {
     expect(FilterWrapper.find('.filter__list')).toHaveLength(1);
   });
 
+  test('ensure the category down arrow turns to an up arrow after being clicked', () => {
+    FilterWrapper.find('.filter__button').simulate('click');
+    expect(FilterWrapper.find('.filter__button').text()).toEqual('Category ↑');
+  });
+
+  test('ensure clicking the category button twice causes the list to go away', () => {
+    FilterWrapper.find('.filter__button').simulate('click');
+    expect(FilterWrapper.find('.filter__list')).toHaveLength(1);
+    FilterWrapper.find('.filter__button').simulate('click');
+    expect(FilterWrapper.find('.filter__list')).toHaveLength(0);
+  });
+
 });
 
 describe('Render <Filter> mounted testing', () => {
   
   let FilterWrapper;
   let setCategory = jest.fn();
+  const fireEvent = createDocumentListenersMock();
 
   beforeEach(() => {
     FilterWrapper = mount(<Filter setCategory={setCategory} />);
@@ -81,10 +111,19 @@ describe('Render <Filter> mounted testing', () => {
     expect(FilterWrapper.find('.filter__list')).toHaveLength(0);
   });
 
-  test('ensure clicking anywhere other than the list will cause an open list to collapse', () => {
+  test ('ensure clicking on the document causes the list to collapse', () => {
     FilterWrapper.find('.filter__button').simulate('click');
     expect(FilterWrapper.find('.filter__list')).toHaveLength(1);
-    FilterWrapper.find('.filter__header').simulate('click');
-    expect(FilterWrapper.find('.filter__list')).toHaveLength(1);
+    act(() => fireEvent.mouseUp(document.body));
+    FilterWrapper.update();
+    expect(FilterWrapper.find('.filter__list')).toHaveLength(0);
+  });
+
+  test ('ensure firing a click event on a list item checks the target value as containing the list, which then closes the list', () => {
+    FilterWrapper.find('.filter__button').simulate('click');
+    expect(FilterWrapper.find('.filter__list-item')).toHaveLength(17);
+    act(() => fireEvent.mouseUp(document.getElementsByClassName('filter__list-item')[0]));
+    FilterWrapper.update();
+    expect(FilterWrapper.find('.filter__list')).toHaveLength(0);
   });
 });
