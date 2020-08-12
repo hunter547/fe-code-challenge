@@ -44,7 +44,9 @@ const DetailsModal = (props) => {
     }
   };
 
+  
   useEffect(() => {
+    // These timers ensure that if a tooltip is already displaying, the timer should be reset.
     if (showTooltip) {
       const timeDifference = new Date() - timeOutStart;
       if (timeDifference < 2000) {
@@ -57,6 +59,7 @@ const DetailsModal = (props) => {
       setTimeOutStart(new Date());
     }
     else {
+      // If two seconds have passed without another add to cart click, close the tooltip and clear out the timer
       setTimeOut(null);
       setTimeOutStart(null);
       ReactTooltip.hide();
