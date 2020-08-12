@@ -1,5 +1,11 @@
 @import'../variables.scss';
 
+.flowergrid__loading {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
 .flowergrid::before {
   content: '';
   width: 0;

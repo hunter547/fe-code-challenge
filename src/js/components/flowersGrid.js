@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import DetailsModal from '../components/detailsModal';
 import '../../style/components/flowersGrid.scss';
 import SaleSVG from '../../assets/Sale';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { css } from '@emotion/core';
 
 
 
@@ -28,9 +30,16 @@ const FlowersGrid = ({ category }) => {
   };
 
   useEffect(() => {
+    const env = window.location.href;
+    let url;
+    if (env.search(/localhost/i) > 0) {
+      url = `http://localhost:8081/${category ? parameters : 'categories'}`;
+    }
+    else {
+      url = `https://bouqs-database.herokuapp.com/${category ? parameters : 'categories'}`;
+    }
     const Http = new XMLHttpRequest();
     const parameters = category ? `categories?slug=${category.replace(' ','-').toLowerCase()}` : null;
-    const url = `http://localhost:8081/${category ? parameters : 'categories'}`;
     Http.open('GET', url);
     Http.send();
     Http.onreadystatechange =() => {
@@ -40,7 +49,11 @@ const FlowersGrid = ({ category }) => {
     };
   }, [category]);
 
-  if (!flowerData) return <div>Loading...</div>;
+  const loadingStyle = css`
+    margin: 0 auto
+  `;
+
+  if (!flowerData) return <div className="flowergrid__loading"><ClipLoader color="#023440" css={loadingStyle} /></div>; 
   const products = [];
   flowerData.forEach(flower => {
     flower.products.forEach(product => {
