@@ -13,6 +13,8 @@ const FlowersGrid = ({ category }) => {
   const [flowerData, setFlowerData] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [product, setProduct] = useState(null);
+  const [showHerokuMessage, setShowHerokuMessage] = useState(false);
+  const timeOut = setTimeout(() => setShowHerokuMessage(true), 1500);
 
   const flipModal = (timerID) => {
     setModalIsOpen(!modalIsOpen);
@@ -44,6 +46,7 @@ const FlowersGrid = ({ category }) => {
     Http.send();
     Http.onreadystatechange =() => {
       if (Http.readyState==4 && Http.status==200) {
+        clearTimeout(timeOut);
         setFlowerData(JSON.parse(Http.response));
       }
     };
@@ -53,7 +56,8 @@ const FlowersGrid = ({ category }) => {
     margin: 0 auto
   `;
 
-  if (!flowerData) return <div className="flowergrid__loading"><ClipLoader color="#023440" css={loadingStyle} /></div>; 
+  if (!flowerData && showHerokuMessage) return <div className="flowergrid__loading"><ClipLoader color="#023440" css={loadingStyle} /><h3>Waiting for Heroku dynos to start...</h3></div>; 
+  if (!flowerData) return <div className="flowergrid__loading"><ClipLoader color="#023440" css={loadingStyle} /></div>;
   const products = [];
   flowerData.forEach(flower => {
     flower.products.forEach(product => {

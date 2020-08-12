@@ -4,6 +4,11 @@
   display: flex;
   width: 100%;
   align-items: center;
+  flex-direction: column;
+  h3 {
+    margin-top: 3rem;
+    font-weight: 400;
+  }
 }
 
 .flowergrid::before {
