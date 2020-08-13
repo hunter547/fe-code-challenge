@@ -16,7 +16,7 @@
     "dev": "./node_modules/.bin/webpack-dev-server -d --hot --inline --progress --colors --history-api-fallback",
     "api": "json-server --watch api/db.js --port 8081 --routes api/routes.json",
     "dev:api": "npm run api & npm run dev",
-    "build": "NODE_ENV=production ./node_modules/.bin/webpack -p && echo '/* /index.html 200' | cat >dist/_redirects && cp -v ./{manifest.json,favicon.ico} dist/",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack -p && echo '/* /index.html 200' | cat >dist/_redirects && mv manifest.json dist/ && mv favicon.ico dist/",
     "test": "yarn jest && yarn lint",
     "test:watch": "yarn jest:watch & yarn lint:watch",
     "jest": "./node_modules/.bin/jest",
