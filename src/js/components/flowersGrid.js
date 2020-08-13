@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import DetailsModal from '../components/detailsModal';
 import '../../style/components/flowersGrid.scss';
 import SaleSVG from '../../assets/Sale';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { css } from '@emotion/core';
 
-
+const mapStateToProps = state => {
+  const { category } = state.category;
+  return { category };
+};
 
 const FlowersGrid = ({ category }) => {
 
@@ -119,7 +123,7 @@ const FlowersGrid = ({ category }) => {
   );
 };
  
-export default FlowersGrid;
+export default connect(mapStateToProps)(FlowersGrid);
 
 FlowersGrid.propTypes = {
   category: PropTypes.oneOfType([

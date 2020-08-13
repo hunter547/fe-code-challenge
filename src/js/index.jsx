@@ -29,24 +29,17 @@ class App extends React.Component {
     return 'The Bouqs';
   }
 
-  setCategory = (newCategory) => {
-    this.setState({
-      category: newCategory
-    });
-  }
-
   render() {
     const welcomeText = this.getWelcomeText();
-    const { category } = this.state;
     return (
       <Provider store={store}>
         <Router>
           <Header header={welcomeText} />
           <Switch>
             <Route path="/" exact>
-              <Filter setCategory={(category) => this.setCategory(category)} />
-              <CategoryHeader category={category} />
-              <FlowerGrid category={category}/>
+              <Filter />
+              <CategoryHeader />
+              <FlowerGrid />
             </Route>
             <Route path="/order">
               <Order />

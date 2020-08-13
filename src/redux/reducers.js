@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 
-import { ADD_CART_ITEM, REMOVE_CART_ITEM, SET_CART, ADD_ITEM_QUANTITY, SUBTRACT_ITEM_QUANTITY } from './actions';
+import { ADD_CART_ITEM, REMOVE_CART_ITEM, SET_CART, ADD_ITEM_QUANTITY, SUBTRACT_ITEM_QUANTITY, SET_CATEGORY } from './actions';
 
-const initialState = { cartItems: [] };
+const initialCartState = { cartItems: [] };
+const initialCategoryState = { category: '' };
 
-function cartItems(state = initialState, action) {
+function cartItems(state = initialCartState, action) {
   switch (action.type) {
   case ADD_CART_ITEM:
     return Object.assign({}, state, {
@@ -54,8 +55,21 @@ function cartItems(state = initialState, action) {
   }
 }
 
+function category(state = initialCategoryState, action) {
+  switch (action.type) {
+  case SET_CATEGORY:
+    return Object.assign({}, state, {
+      category: action.category
+    });
+  default:
+    return state;
+  }
+  
+}
+
 const flowersApp = combineReducers({
   cartItems,
+  category
 });
 
 export default flowersApp;

@@ -92,7 +92,7 @@ const DetailsModal = (props) => {
               </div>
               <div className="details-modal__checkout">
                 <Link to="/order">
-                  <button className="details-modal__cart-button">Checkout</button>
+                  <button className="details-modal__cart-button" onClick={() => flipModal(timeOut)}>Checkout</button>
                 </Link>
               </div>
             </div>

@@ -24,11 +24,19 @@
 }
 .flowergrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   row-gap: 8.2rem;
-  column-gap: 8rem;
+  column-gap: 6rem;
   width: 100%;
+  @media (max-width: 81.25rem) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 5.2rem;
+  }
+  @media (max-width: 38.75rem) {
+    grid-template-columns: 1fr;
+  }
   .flowergrid__item {
     font-size: 1.2rem;
     position: relative;
@@ -49,6 +57,9 @@
       border: 1px solid $black;
       display: flex;
       justify-content: space-between;
+      .flowergrid__item-name {
+        margin-right: 1rem;
+      }
       .flowergrid__item-prices {
         display: flex;
         .flowergrid__item-regular {
@@ -64,10 +75,5 @@
   }
   .flowergrid__item:hover {
     cursor: pointer;
-  }
-}
-@media (min-width: $phone) {
-  .flowergrid {
-    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
   }
 }

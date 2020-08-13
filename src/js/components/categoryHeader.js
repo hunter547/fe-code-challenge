@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import '../../style/components/categoryHeader.scss';
+
+const mapStateToProps = state => {
+  const { category } = state.category;
+  return { category };
+};
 
 const CategoryHeader = ({ category }) => {
 
@@ -11,7 +17,7 @@ const CategoryHeader = ({ category }) => {
   );
 };
  
-export default CategoryHeader;
+export default connect(mapStateToProps)(CategoryHeader);
 
 CategoryHeader.propTypes = {
   category: PropTypes.oneOfType([

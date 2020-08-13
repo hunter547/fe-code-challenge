@@ -18,6 +18,15 @@
       font-size: $font-size;
       padding: 0.5rem;
       cursor: pointer;
+      margin-right: 1.5rem;
+    }
+    .filter__clear {
+      position: absolute;
+      font-size: 3rem;
+      font-weight: 300;
+      cursor: pointer;
+      right: -30;
+      top: -9;
     }
     .filter__list {
       z-index: 1;

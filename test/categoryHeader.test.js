@@ -1,5 +1,9 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import store from '../src/redux/store';
+import { Provider } from 'react-redux';
+import { setCategory } from '../src/redux/actions';
+
 
 import CategoryHeader from '../src/js/components/categoryHeader';
 
@@ -8,7 +12,8 @@ describe('Render <CategoryHeader> component', () => {
   let CategoryHeaderWrapper;
 
   beforeAll(() => {
-    CategoryHeaderWrapper = shallow(<CategoryHeader category='hello world'/>);
+    store.dispatch(setCategory('hello world'));
+    CategoryHeaderWrapper = mount(<Provider store={store}><CategoryHeader /></Provider>);
   });
 
   test('render the category header div', () => {
