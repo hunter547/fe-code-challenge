@@ -1,5 +1,4 @@
 fe-code-challenge.code-workspace
-dist
 node_modules
 .npm
 .eslintcache
