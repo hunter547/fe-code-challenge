@@ -12,17 +12,22 @@ const mapStateToProps = state => {
 const Order = ({ cartItems }) => {
 
   const removeItems = (e, id, quantity) => {
+    // Get the quantity the user wants to remove.
     const inputtedQty = parseInt(document.getElementById(id).value);
     document.getElementById(id).value = '1';
+    // Prevent the default behavior of the form submitting and causing a refresh.
     e.preventDefault();
+    // If the quantity the user inputted matches the total quantity, remove the item entirely.
     if (quantity === inputtedQty) {
       storage.removeItem(id);
     }
+    // If the quantity is less than the total quantity, subtract the quantity from the item
     else {
       storage.subtractQuantity(id, inputtedQty);
     } 
   };
 
+  // Calculate the subtotal of the products by summing the product of the price and quantity of all items.
   const subtotal = cartItems.reduce((a,b) => a + (b.price * b.quantity), 0);
 
   return (
@@ -75,6 +80,7 @@ const Order = ({ cartItems }) => {
             </div>
           }
         </div>
+        {/* No items in the cart? Remove the order summary panel */}
         {cartItems.length > 0 ?
           <div className="order__summary">
             <div className="order__summary-content">

@@ -16,10 +16,12 @@ const Filter = ({ setCategory, category }) => {
   const filterRef = useRef();
   const buttonRef = useRef();
 
+  // Responsible for showing or hiding the category list
   const flipCategory = () => {
     setToggleCategory(!toggleCategory);
   };
 
+  // Clears the category when the filter clear button is clicked.
   const clearCategory = () => {
     setCategory(null);
   };
@@ -29,14 +31,18 @@ const Filter = ({ setCategory, category }) => {
     setCategory(newCategory);
   };
 
+  // This function is used to determine whether or not the user has clicked 
+  // outside of either the category list or the filter button. If they have
+  // clicked outside of the list or button, close the list if it is open.
   const handleClickOutside = e => {
     if (filterRef.current) {
-      if (!filterRef.current.contains(e.target) && !buttonRef.current.contains(e.target)) {
+      if (!filterRef.current.contains(e.target) && !buttonRef.current.contains(e.target) && toggleCategory) {
         setToggleCategory(false);
       }
     }
   };
 
+  // Add a listener to the document and remove it when unmounting
   useEffect(() => {
     document.addEventListener('mouseup', handleClickOutside);
     return () => document.removeEventListener('mouseup', handleClickOutside);

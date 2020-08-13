@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import { Provider } from 'react-redux';
 import store from '../src/redux/store';
@@ -132,5 +132,4 @@ describe('Render <Filter> mounted testing', () => {
     FilterWrapper.find('.filter__clear').simulate('click');
     expect(FilterWrapper.find('.filter__clear')).toHaveLength(0);
   });
-
 });
