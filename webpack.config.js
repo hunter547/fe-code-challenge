@@ -47,7 +47,7 @@ const base = {
         new copyWebpackPlugin({
             patterns: [
                 {
-                    from: 'src/html/index.html',
+                    from: 'dist/index.html',
                     to: 'index.html',
                     force: true,
                 }
