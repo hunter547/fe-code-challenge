@@ -57,16 +57,15 @@ const Order = ({ cartItems }) => {
                     <form className="order__grid-item-form" onSubmit={(e) => {
                       removeItems(e, item.id, item.quantity);
                     }} >
-                      <span>
-                        <input className="order__grid-item-input"
-                          id={item.id}
-                          type="number" 
-                          defaultValue="1" 
-                          min="1" 
-                          max={item.quantity} 
-                          onKeyDown={(e) => e.preventDefault()} 
-                        />
-                      </span>
+                      <input className="order__grid-item-input"
+                        id={item.id}
+                        type="number"
+                        inputMode="numeric"
+                        defaultValue="1" 
+                        min="1" 
+                        max={item.quantity}
+                        onKeyDown={(e) => {if(e.keyCode===13) {e.preventDefault();}}}
+                      />
                       <input className="order__grid-item-remove" type="submit" value="Remove" />
                     </form>
                   </div>

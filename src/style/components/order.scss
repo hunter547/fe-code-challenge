@@ -42,18 +42,6 @@
             }
           }
           .order__grid-item-price {
-            span {
-              position: relative;
-              &:after {
-                content: "";
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                position: absolute;
-                width: 55%;
-              }
-            }
             .order__grid-item-form {
               display: flex;
               @media(max-width: 37.5rem) {
@@ -61,8 +49,14 @@
                 align-items: flex-start;
               }
               .order__grid-item-input {
+                width: 3rem;
+                @media(max-width: 40.625rem) {
+                  width: 2.5rem;
+                  text-align: center;
+                  padding: 0.35rem;
+                }
                 font-family: $font;
-                padding: 0.35rem;
+                padding: 0.35rem 0.2rem 0.35rem 0.35rem;
                 outline: none;
                 margin-right: 0.5rem;
               }

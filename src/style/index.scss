@@ -21,10 +21,10 @@ body {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {  
    opacity: 1;
-   -webkit-appearance: inner-spin-button !important;
-   width: 1.5625rem;
-   position: absolute;
-   top: 0.3;
-   right: 0;
-   height: 100%;
+   height: 1.5rem;
+   cursor: pointer;
+   @media(max-width: 40.625rem) {
+    opacity: 0;
+    cursor: default;
+  }
 }
