@@ -2,11 +2,7 @@
 
 .order {
   .order__header {
-    margin-bottom: 5rem;
-    .order__header-underline {
-      width: 100%;
-      border: 0.0625rem solid $grey;
-    }
+    margin-bottom: 3rem;
   }
   .order__content {
     width: 100%;
@@ -20,13 +16,17 @@
       width: 60%;
       @media(max-width: 53.125rem) {
         width: 100%;
-        margin-bottom: 2rem;
       }
       .order__grid-item {
         border-bottom: 0.0625rem solid $black;
         padding: 1rem 0rem;
         &:first-child {
           border-top: 0.0625rem solid $black;
+        }
+        @media(max-width: 53.125rem) {
+          &:last-child {
+            border-bottom: none;
+          }
         }
         .order__grid-item-content {
           display: flex;
@@ -42,6 +42,9 @@
             }
           }
           .order__grid-item-price {
+            @media(max-width: 53.125rem) {
+              text-align: right;
+            }
             .order__grid-item-form {
               display: flex;
               @media(max-width: 37.5rem) {
