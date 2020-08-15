@@ -28,7 +28,7 @@ const Header = ({ header, cartItems }) => {
       <div className="header__cart-container">
         <Link to="/order">
           <ShoppingCart className="header__cart" />
-          {quantity > 0 ? <div className="header__cart-count">{quantity}</div> : null}
+          {quantity > 0 && ( <div className="header__cart-count">{quantity}</div> )}
         </Link>
       </div>
     </header>

@@ -123,7 +123,7 @@ const Order = ({ cartItems }) => {
           }
         </div>
         {/* No items in the cart? Remove the order summary panel */}
-        {cartItems.length > 0 ?
+        {cartItems.length > 0 && (
           <div className="order__summary">
             <div className="order__summary-content">
               <div className="order__summary-subtotal">
@@ -139,10 +139,7 @@ const Order = ({ cartItems }) => {
                 <h2>${subtotal + 11}</h2>
               </div>
             </div>
-          </div> 
-          : 
-          null
-        }
+          </div> )}
       </div>
     </div>
   );

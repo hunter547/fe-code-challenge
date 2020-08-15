@@ -57,22 +57,17 @@ const Filter = ({ setCategory, category }) => {
           :
           <button className="filter__button" ref={buttonRef} onClick={() => flipCategory()}>Category &#8595;</button>
         }
-        {toggleCategory ? 
+        {toggleCategory && (
           <ul className="filter__list" ref={filterRef}>
             {CATEGORY_NAMES.map((category, index) => {
               return (
                 <li className="filter__list-item" key={index} onClick={() => setNewCategory(category)}>{category}</li>
               );
             })}
-          </ul>
-          :
-          ''
-        }
-        {category ? 
+          </ul> )}
+        {category && (
           <div className="filter__clear" onClick={() => clearCategory()}>&times;</div>
-          :
-          ''
-        }
+        )}
       </div>
     </div>
   );

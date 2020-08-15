@@ -125,7 +125,7 @@ const FlowersGrid = ({ category }) => {
           return (
             <div className="flowergrid__item" key={index} onClick={() => newModalData([product, bestPrices])}>
               <img className="flowergrid__item-image" src={product.images[0].url} alt={product.image_alt_tags} />
-              {bestPrices.sale ? <SaleSVG className="flowergrid__item-badge"/> : null}
+              {bestPrices.sale > 0 && ( <SaleSVG className="flowergrid__item-badge"/> )}
               <div className="flowergrid__item-content">
                 <div className="flowergrid__item-name">{product.name}</div>
                 {bestPrices.sale === 0 ? 
@@ -142,7 +142,7 @@ const FlowersGrid = ({ category }) => {
             </div>
           );
         })}
-        {modalIsOpen ? <DetailsModal modalIsOpen={modalIsOpen} flipModal={(timeOut) => flipModal(timeOut)} product={product} /> : null}
+        {modalIsOpen && ( <DetailsModal modalIsOpen={modalIsOpen} flipModal={(timeOut) => flipModal(timeOut)} product={product} /> )}
       </div>
     </div>
     
