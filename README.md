@@ -48,4 +48,4 @@ If you're feeling extra 💪 feel free to do some bonus tasks.
 **Note:** If the flower grid doesn't populate right away when visiting the front-end site, please allow some time for the Heroku dynos to wake up and serve data.
 
 ## Original Submission vs Master branch
-I made some changes after submitting for additional features and styling. I've been enjoying this challenge and keep thinking of new things I want to do. I understand if these changes won't be considered, so I made a "original submission" [branch](https://github.com/hunter547/fe-code-challenge/tree/original-submission). That being said, I hope you can see what else I've added :)
+I made some changes after submitting for additional features and styling. I've been enjoying this challenge and keep thinking of new things I want to do. I understand if these changes won't be considered, so I made a "original submission" [branch](https://github.com/hunter547/fe-code-challenge/tree/original-submission). That being said, I hope you can see what else I've added. 🙂
