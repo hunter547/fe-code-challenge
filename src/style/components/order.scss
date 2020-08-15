@@ -35,49 +35,93 @@
             display: flex;
             align-items: center;
             .order__grid-item-visual {
+              display: flex;
+              align-self: start;
+              margin-top: 1.57rem;
               .order__grid-item-image {
                 width: 5rem;
                 margin-right: 1rem;
               }
             }
-          }
-          .order__grid-item-price {
-            @media(max-width: 53.125rem) {
-              text-align: right;
-            }
-            .order__grid-item-form {
+            .order__grid-item-information {
+              h2 {
+                margin-bottom: 0;
+              }
               display: flex;
-              @media(max-width: 37.5rem) {
-                flex-direction: column;
-                align-items: flex-start;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 100%;
+              .order__grid-item-numbers {
+                font-size: 1.2rem;
               }
-              .order__grid-item-input {
-                width: 3rem;
-                @media(max-width: 40.625rem) {
-                  width: 2.5rem;
-                  text-align: center;
-                  padding: 0.35rem;
-                }
-                font-family: $font;
-                padding: 0.35rem 0.2rem 0.35rem 0.35rem;
-                outline: none;
-                margin-right: 0.5rem;
+            }
+          }
+          .order__grid-item-right {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            margin-left: 2rem;
+            .order__grid-item-price {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: 100%;
+              @media(max-width: 53.125rem) {
+                text-align: right;
               }
-              .order__grid-item-remove {
-                font-family: $font;
-                background: none;
-                border: none;
-                color: $dark-blue;
-                font-weight: 500;
-                outline: none;
-                padding: 0;
-                margin-left: 0.5rem;
-                cursor: pointer;
-                &:hover {
-                  text-decoration: underline;
+              .order__grid-item-form {
+                display: flex;
+                @media(max-width: 31.25rem) {
+                  flex-direction: column;
+                  align-items: flex-start;
                 }
-                @media(max-width: 37.5rem) {
-                  margin: 1rem 0 0 0;
+                .order__grid-item-input {
+                  display: flex;
+                  align-self: flex-end;
+                  width: 3rem;
+                  @media(max-width: 40.625rem) {
+                    width: 2.5rem;
+                    text-align: center;
+                    padding: 0.35rem;
+                  }
+                  @media(max-width: 31.25rem) {
+                    margin-right: 0;
+                  }
+                  font-family: $font;
+                  padding: 0.35rem 0.2rem 0.35rem 0.35rem;
+                  outline: none;
+                  margin-right: 0.5rem;
+                }
+                .order__grid-item-update {
+                  font-family: $font;
+                  background: none;
+                  border: none;
+                  color: $dark-blue;
+                  font-weight: 500;
+                  outline: none;
+                  padding: 0;
+                  margin-left: 0.2rem;
+                  cursor: pointer;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                  @media(max-width: 31.25rem) {
+                    margin: 1rem 0 0 0;
+                  }
+                }
+              }
+              .order__grid-item-remove-container {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                @media (max-width: 53.125rem) {
+                  justify-content: flex-end;
+                }
+                .order__grid-item-remove {
+                  cursor: pointer;
+                  font-size: 2rem;
+                  margin-bottom: 0.3rem;
+                  color: $red
                 }
               }
             }

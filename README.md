@@ -45,4 +45,7 @@ If you're feeling extra 💪 feel free to do some bonus tasks.
 3. For the front-end hosting, that was very easy to do on Netlify, just pick the repository and build it to the dist folder.
 4. The front-end of the project can be visited here: [https://bouqs-fe-challenge.netlify.app/](https://bouqs-fe-challenge.netlify.app/)
 
-**Note:** If the flower grid doesn't populate right away when visiting the front-end site, please allow some time for the Heroku dynos to wake up and serve data. 
+**Note:** If the flower grid doesn't populate right away when visiting the front-end site, please allow some time for the Heroku dynos to wake up and serve data.
+
+## Original Submission vs Master branch
+1. I made some changes after submitting for additional features and styling. I've been enjoying this challenge and keep thinking of new things I want to do. I understand if these changes won't be considered, so I made a "original submission" [branch](https://github.com/hunter547/fe-code-challenge/tree/original-submission). That being said, I hope you can see what else I've added :)

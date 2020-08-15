@@ -73,6 +73,7 @@
     .details-modal__visual {
       margin-right: 2rem;
       @media (max-width: 40.625rem) {
+        width: 100%;
         margin-right: 0;
         margin-bottom: 1rem;
       }
@@ -88,7 +89,8 @@
           width: 14rem;
         }
         @media (max-width: 40.625rem) {
-          width: 100%;
+          width: 12rem;
+          margin: 0 auto;
         }
       }
     }
@@ -102,16 +104,25 @@
             margin-top: 0;
             text-decoration: underline;
             font-weight: 400;
+            @media (max-width: 40.625rem) {
+              font-size: 1.3rem;
+            }
           }
         }
         .details-modal__description {
           h3 {
             font-weight: 400;
+            @media (max-width: 40.625rem) {
+              font-size: 1rem;
+            }
           }
         }
         .details-modal__manufacturer {
           h3 {
             font-weight: 400;
+            @media (max-width: 40.625rem) {
+              font-size: 1rem;
+            }
           }
         }
       }
